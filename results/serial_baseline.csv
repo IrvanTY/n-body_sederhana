@@ -1,0 +1,3 @@
+N,steps,binary,env,t_total,energy
+8000,1000,container:/opt/nbody/nbody_serial,apptainer+nbody.sif@compute01.local,474.345,-3.325505069875e-08
+8000,1000,bare:src/nbody_serial,bare-metal@compute01.local,477.443,-3.325505069875e-08

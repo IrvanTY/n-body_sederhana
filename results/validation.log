@@ -1,0 +1,7 @@
+== referensi serial vs energi ulangan tercatat ==
+N=1000 ulangan=3 worst_reldiff=0.000e+00
+N=2000 ulangan=3 worst_reldiff=0.000e+00
+N=4000 ulangan=3 worst_reldiff=0.000e+00
+N=8000 ulangan=28 worst_reldiff=0.000e+00
+N=16000 ulangan=3 worst_reldiff=0.000e+00
+ALL VALIDATED

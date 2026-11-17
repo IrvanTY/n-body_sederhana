@@ -1,0 +1,27 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%environment
+    export PATH=/usr/local/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+%post
+    apt-get update && apt-get install -y build-essential gfortran perl wget
+    rm -rf /var/lib/apt/lists/*
+    cd /tmp
+    wget https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.2.tar.gz
+    tar xzf openmpi-4.1.2.tar.gz
+    cd openmpi-4.1.2 && ./configure --prefix=/usr/local && make -j$(nproc) && make install
+    ldconfig
+    rm -rf /tmp/openmpi-4.1.2 /tmp/openmpi-4.1.2.tar.gz
+    export PATH=/usr/local/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+    mkdir -p /opt/nbody
+    cd /opt/nbody/src && make clean && make
+    cp bin/nbody_serial bin/nbody_mpi bin/nbody_mpi_omp /opt/nbody/
+
+%files
+    ../src /opt/nbody/src
+
+%runscript
+    exec /opt/nbody/nbody_mpi "$@"

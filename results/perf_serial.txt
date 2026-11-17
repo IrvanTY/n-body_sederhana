@@ -1,0 +1,11 @@
+$ perf stat -e cycles,instructions,cache-misses ./src/nbody_serial data/solar_system.csv 50 0.5 /tmp/p.csv /tmp/p.txt
+WARNING: perf not found for kernel 5.15.0-203
+
+  You may need to install the following packages for this specific kernel:
+    linux-tools-5.15.0-203-generic
+    linux-cloud-tools-5.15.0-203-generic
+
+  You may also want to install one of the following packages to keep up to date:
+    linux-tools-generic
+    linux-cloud-tools-generic
+perf_exit=2

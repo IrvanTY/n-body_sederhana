@@ -1,0 +1,7 @@
+N,steps,P,trial,machine,config,t_total,energy
+8000,200,4,1,compute01.local,bare,25.046,-3.325503816788e-08
+8000,200,4,1,compute01.local,container,24.597,-3.325503816788e-08
+8000,200,4,2,compute01.local,bare,24.559,-3.325503816788e-08
+8000,200,4,2,compute01.local,container,24.940,-3.325503816788e-08
+8000,200,4,3,compute01.local,bare,24.518,-3.325503816788e-08
+8000,200,4,3,compute01.local,container,24.454,-3.325503816788e-08
